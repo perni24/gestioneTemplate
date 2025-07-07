@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "tag": "titolo",
+    "dataCreazione": "2025-07-01T09:00:00Z"
+  },
+  {
+    "id": 2,
+    "tag":"testo semplice",
+    "dataCreazione": "2025-06-15T14:30:00Z"
+  },
+  {
+    "id": 3,
+    "tag": "tabella semplice",
+    "dataCreazione": "2025-05-20T11:45:00Z"
+  }
+]
