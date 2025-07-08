@@ -23,7 +23,7 @@ function Componenti() {
     return (
         <>
             <div className="flex flex-col items-center justify-center w-screen h-screen space-y-6 ">
-                <div className='w-5/6'>
+                <div className='flex items-center w-5/6 h-3/4'>
                     <Tabella dati={dati} colonne={colonne} />
                 </div>
             </div>

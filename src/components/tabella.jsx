@@ -1,9 +1,14 @@
+import { useState } from "react"
+import Anteprima from "./anteprima"
+
 function Tabella({ dati, colonne }) {
+   const [modale, setModale] = useState(false)
+   const coll = colonne.length
 
     return (
         <>
-            <div className="w-full rounded-lg overflow-hidden border border-gray-400">
-                <table className="w-full border-collapse border-gray-400">
+            <div className="w-full rounded-lg overflow-hidden border border-gray-400" hidden={modale}>
+                <table className="w-full border-collapse border-gray-400" >
                     <thead className=" bg-blue-400">
                         <tr>
                             {colonne.map((item, key) => (
@@ -11,9 +16,14 @@ function Tabella({ dati, colonne }) {
                             ))}
                         </tr>
                     </thead>
+                    <tfoot> 
+                        <tr>
+                           <td colSpan={coll}><button className="btn text-lg w-full">+</button></td>
+                        </tr>
+                    </tfoot>
                     <tbody className="">
                         {dati.map((item, key) => (
-                            <tr key={key} className="text-white hover:bg-gray-300 cursor-pointer hover:text-black">
+                            <tr key={key} className="text-white hover:bg-gray-300 cursor-pointer hover:text-black" onClick={() => setModale(true)}>
                                 {colonne.map((colonna, colIndex) => (
                                     <td key={colIndex} className="text-center align-middle p-2">{item[colonna]}</td>
                                 ))}
@@ -22,8 +32,9 @@ function Tabella({ dati, colonne }) {
                     </tbody>
                 </table>
             </div>
-            <div className="w-full">
-                <button className="btn">nuovo</button>
+            <div className="flex flex-col w-full h-full rounded-lg overflow-hidden border border-gray-400" hidden={!modale}>
+                <button className="btn text-lg" onClick={() => setModale(false)}>x</button>
+                <Anteprima/>
             </div>
         </>
     )

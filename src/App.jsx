@@ -18,7 +18,7 @@ function App() {
   }
   return (
     <>
-      <div className="w-screen h-24 bg-gray-600 absolute flex items-center">
+      <div className="w-screen h-24 bg-gray-700 absolute flex items-center">
         <button className="btn w-1/14 m-2" onClick={() => setPagina(0)}>Home</button>
       </div>
       {navigazione() /* serve per aggiornare il valore di navigazione */}
