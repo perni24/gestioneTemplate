@@ -2,17 +2,20 @@
   {
     "id": 1,
     "nomeTemplate": "Benvenuto Base",
-    "dataCreazione": "2025-07-01T09:00:00Z"
+    "dataCreazione": "2025-07-01T09:00:00Z",
+    "html": "<html><body><h1>Benvenuto!</h1><p>Grazie per esserti iscritto.</p></body></html>"
   },
   {
     "id": 2,
     "nomeTemplate": "Newsletter Mensile",
-    "dataCreazione": "2025-06-15T14:30:00Z"
+    "dataCreazione": "2025-06-15T14:30:00Z",
+    "html": "<html><body><h1>Novità del Mese</h1><p>Scopri le ultime novità e offerte.</p></body></html>"
   },
   {
     "id": 3,
     "nomeTemplate": "Promozione Estiva",
-    "dataCreazione": "2025-05-20T11:45:00Z"
+    "dataCreazione": "2025-05-20T11:45:00Z",
+    "html": "<html><body><h1>Offerte Estive</h1><p>Non perdere le nostre offerte estive!</p></body></html>"
   }
  
 ]

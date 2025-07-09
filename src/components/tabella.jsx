@@ -3,6 +3,7 @@ import Anteprima from "./anteprima"
 
 function Tabella({ dati, colonne }) {
    const [modale, setModale] = useState(false)
+   const [select, setSelect] = useState(null)
    const coll = colonne.length
 
     return (
@@ -23,7 +24,7 @@ function Tabella({ dati, colonne }) {
                     </tfoot>
                     <tbody className="">
                         {dati.map((item, key) => (
-                            <tr key={key} className="text-white hover:bg-gray-300 cursor-pointer hover:text-black" onClick={() => setModale(true)}>
+                            <tr key={key} className="text-white hover:bg-gray-300 cursor-pointer hover:text-black" onClick={() => {setModale(true); setSelect(item.html)}}>
                                 {colonne.map((colonna, colIndex) => (
                                     <td key={colIndex} className="text-center align-middle p-2">{item[colonna]}</td>
                                 ))}
@@ -34,7 +35,7 @@ function Tabella({ dati, colonne }) {
             </div>
             <div className="flex flex-col w-full h-full rounded-lg overflow-hidden border border-gray-400" hidden={!modale}>
                 <button className="btn text-lg" onClick={() => setModale(false)}>x</button>
-                <Anteprima/>
+                <Anteprima html={select}/>
             </div>
         </>
     )
