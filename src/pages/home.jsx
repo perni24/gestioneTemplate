@@ -1,9 +1,11 @@
+import ButtonLink from "../components/buttonLink"
+
 function Home({ setPagina }){
     return (
         <>
         <div className="flex flex-col items-center justify-center w-screen h-screen space-y-6 ">
-            <button className='btn w-1/4' onClick={() => setPagina(1)}>Template</button>
-            <button className='btn w-1/4' onClick={() => setPagina(2)}>Componenti</button>
+            <div className="w-1/4"><ButtonLink to={"/template"} testo={"Template"}/></div>
+            <div className="w-1/4"><ButtonLink to={"/componenti"} testo={"Componenti"}/></div>
         </div>
         </>
     )
