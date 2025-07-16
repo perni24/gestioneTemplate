@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Anteprima from "./anteprima"
+import ButtonLink from "./buttonLink"
 
 function Tabella({ dati, colonne }) {
    const [modale, setModale] = useState(false)
@@ -19,7 +20,7 @@ function Tabella({ dati, colonne }) {
                     </thead>
                     <tfoot> 
                         <tr>
-                           <td colSpan={coll}><button className="btn text-lg w-full">+</button></td>
+                           <td colSpan={coll}><ButtonLink to={"/editor"} testo={"+"}/></td>
                         </tr>
                     </tfoot>
                     <tbody className="">

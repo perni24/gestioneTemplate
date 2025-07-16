@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/home'
 import Template from './pages/template'
 import Componenti from './pages/componenti'
+import Editor from './pages/editor'
 
 // 2. Crea la "mappa" del tuo sito
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         path: 'componenti', // URL: /componenti
         element: <Componenti />,
       },
+      {
+        path: 'editor',
+        element: <Editor />,
+      }
     ],
   },
 ])

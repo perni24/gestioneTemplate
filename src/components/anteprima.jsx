@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Scarica from "./scarica"
 
-function Anteprima(html) {
+function Anteprima({html, soloAnteprima}) {
     const [modaleElimina, setModaleElimina] = useState(false)
     return (
         <>
@@ -14,7 +14,7 @@ function Anteprima(html) {
                         title="Anteprima"
                     />
                 </div>
-                <div className="flex flex-row-reverse w-full justify-around m-4">
+                <div className="flex flex-row-reverse w-full justify-around m-4" hidden={soloAnteprima}>
                     <button className="btn w-1/6">Modifica</button>
                     <div className="w-1/6"><Scarica/></div>
                     <button className="btn w-1/6" onClick={() => setModaleElimina(true)}>Elimina</button>
