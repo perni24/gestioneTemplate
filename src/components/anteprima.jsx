@@ -1,21 +1,22 @@
 import { useState } from "react"
 import Scarica from "./scarica"
+import ButtonLink from "./buttonLink"
 
-function Anteprima({html, soloAnteprima}) {
+function Anteprima({html, soloAnteprima, idTemplate}) {
     const [modaleElimina, setModaleElimina] = useState(false)
     return (
         <>
             <div className="flex flex-col items-center w-full h-full overflow-hidden">
                 <div className="flex flex-col items-center w-full h-full overflow-y-auto bg-black">
                     <iframe
-                        className="w-3/4 h-full bg-gray-100 overflow-y-auto"
-                        srcDoc={html.html}
+                        className="w-full h-full bg-gray-100 overflow-y-auto"
+                        srcDoc={html}
                         sandbox="allow-same-origin allow-scripts"
                         title="Anteprima"
                     />
                 </div>
                 <div className="flex flex-row-reverse w-full justify-around m-4" hidden={soloAnteprima}>
-                    <button className="btn w-1/6">Modifica</button>
+                    <div className="w-1/6"><ButtonLink to={"/editor"} testo={"Modifica"} state={{html : html}}/></div>
                     <div className="w-1/6"><Scarica/></div>
                     <button className="btn w-1/6" onClick={() => setModaleElimina(true)}>Elimina</button>
                 </div>

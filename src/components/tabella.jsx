@@ -25,7 +25,7 @@ function Tabella({ dati, colonne }) {
                     </tfoot>
                     <tbody className="">
                         {dati.map((item, key) => (
-                            <tr key={key} className="text-white hover:bg-gray-300 cursor-pointer hover:text-black" onClick={() => {setModale(true); setSelect(item.html)}}>
+                            <tr key={key} className="text-white hover:bg-gray-300 cursor-pointer hover:text-black" onClick={() => {setModale(true); setSelect({html : item.html, idTemplate: item.id})}}>
                                 {colonne.map((colonna, colIndex) => (
                                     <td key={colIndex} className="text-center align-middle p-2">{item[colonna]}</td>
                                 ))}
@@ -36,7 +36,7 @@ function Tabella({ dati, colonne }) {
             </div>
             <div className="flex flex-col w-full h-full rounded-lg overflow-hidden border border-gray-400" hidden={!modale}>
                 <button className="btn text-lg" onClick={() => setModale(false)}>x</button>
-                <Anteprima html={select}/>
+                <Anteprima html={select?.html} soloAnteprima={false} idTemplate={select?.idTemplate}/>
             </div>
         </>
     )

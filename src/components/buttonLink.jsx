@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom'
 
-function ButtonLink({ to, testo }) {
+function ButtonLink({ to, testo, state}) {
 
    const navigate = useNavigate()
 
    const cambioPagina = () => {
-      navigate(to)
+      navigate(to, {state})
    }
 
    return (
